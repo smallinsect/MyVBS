@@ -1,0 +1,6 @@
+
+This should be 18: 0
+This should be 18: 0
+size of array = -1 (should equal 4)
+
+
