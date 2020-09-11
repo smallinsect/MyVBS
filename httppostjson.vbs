@@ -36,7 +36,7 @@ http.AllowGzip = 0
 ' AddQuickHeader:
 success = http.AddQuickHeader("Cookie","JSESSIONID=1234")
 
-jsonText = "{""uids"":[], ""type"":2, ""title"":""222"", ""content"":""3333"", ""res"":""4444""}"
+jsonText = "{""user"":""doctoravatar@penzance.com"",""forecast"":7,""t"":""vlIj"",""zip"":94089}"
 
 ' To use SSL/TLS, simply use "https://" in the URL.
 
@@ -45,13 +45,12 @@ jsonText = "{""uids"":[], ""type"":2, ""title"":""222"", ""content"":""3333"", "
 ' in this example will not actually work.
 
 ' resp is a Chilkat_9_5_0.HttpResponse
-Set resp = http.PostJson("http://localhost:9520/user/mail",jsonText)
+Set resp = http.PostJson("http://json.penzance.org/request",jsonText)
 If (http.LastMethodSuccess <> 1) Then
     outFile.WriteLine(http.LastErrorText)
 Else
     ' Display the JSON response.
     outFile.WriteLine(resp.BodyStr)
 End If
-
 
 outFile.Close
